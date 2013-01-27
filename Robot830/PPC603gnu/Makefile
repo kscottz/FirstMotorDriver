@@ -55,7 +55,7 @@ LIBS =
 
 IDE_INCLUDES = -IC:/WindRiver/vxworks-6.3/target/h/WPILib -IC:/WindRiver/vxworks-6.3/target/h/wrn/coreip 
 
-IDE_LIBRARIES = 
+IDE_LIBRARIES = -L $(WIND_BASE)/target/lib/WPILib.a 
 
 IDE_DEFINES = 
 
@@ -103,7 +103,7 @@ Robot830/$(MODE_DIR)/% : DEBUGFLAGS_Librarian =
 Robot830/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -O2 -fstrength-reduce -fno-builtin
 endif
 Robot830/$(MODE_DIR)/% : IDE_INCLUDES = -IC:/WindRiver/vxworks-6.3/target/h/WPILib -IC:/WindRiver/vxworks-6.3/target/h/wrn/coreip 
-Robot830/$(MODE_DIR)/% : IDE_LIBRARIES = 
+Robot830/$(MODE_DIR)/% : IDE_LIBRARIES = -L $(WIND_BASE)/target/lib/WPILib.a 
 Robot830/$(MODE_DIR)/% : IDE_DEFINES = 
 Robot830/$(MODE_DIR)/% : PROJECT_TYPE = DKM
 Robot830/$(MODE_DIR)/% : DEFINES = 
@@ -148,7 +148,7 @@ Robot830_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Librarian =
 Robot830_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -O2 -fstrength-reduce -fno-builtin
 endif
 Robot830_partialImage/$(MODE_DIR)/% : IDE_INCLUDES = -IC:/WindRiver/vxworks-6.3/target/h/WPILib -IC:/WindRiver/vxworks-6.3/target/h/wrn/coreip 
-Robot830_partialImage/$(MODE_DIR)/% : IDE_LIBRARIES = 
+Robot830_partialImage/$(MODE_DIR)/% : IDE_LIBRARIES = -L $(WIND_BASE)/target/lib/WPILib.a 
 Robot830_partialImage/$(MODE_DIR)/% : IDE_DEFINES = 
 Robot830_partialImage/$(MODE_DIR)/% : PROJECT_TYPE = DKM
 Robot830_partialImage/$(MODE_DIR)/% : DEFINES = 

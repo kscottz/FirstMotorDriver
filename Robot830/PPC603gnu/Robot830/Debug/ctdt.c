@@ -7,20 +7,14 @@
 /*       -fdollars-in-identifiers flag.                   */
 
 
-void _GLOBAL__I_C__FirstMotorDriver_Robot830_BlinkyRobot_cpp_05647D79_A6E257B7();
-
 extern void (*_ctors[])();
 void (*_ctors[])() =
     {
-    _GLOBAL__I_C__FirstMotorDriver_Robot830_BlinkyRobot_cpp_05647D79_A6E257B7,
     0
     };
-
-void _GLOBAL__D__GLOBAL__I_C__FirstMotorDriver_Robot830_BlinkyRobot_cpp_05647D79_A6E257B7();
 
 extern void (*_dtors[])();
 void (*_dtors[])() =
     {
-    _GLOBAL__D__GLOBAL__I_C__FirstMotorDriver_Robot830_BlinkyRobot_cpp_05647D79_A6E257B7,
     0
     };
