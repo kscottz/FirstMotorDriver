@@ -163,11 +163,11 @@ Robot830_partialImage/$(MODE_DIR)/% : LIBPATH =
 Robot830_partialImage/$(MODE_DIR)/% : LIBS = 
 Robot830_partialImage/$(MODE_DIR)/% : OBJ_DIR := Robot830_partialImage/$(MODE_DIR)
 
-Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/BlinkyRobot.o : $(PRJ_ROOT_DIR)/BlinkyRobot.cpp $(FORCE_FILE_BUILD)
+Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/ShooterRobot.o : $(PRJ_ROOT_DIR)/ShooterRobot.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-OBJECTS_Robot830_partialImage = Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/BlinkyRobot.o
+OBJECTS_Robot830_partialImage = Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/ShooterRobot.o
 
 Robot830_partialImage/$(MODE_DIR)/Robot830_partialImage.o : $(OBJECTS_Robot830_partialImage)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X  -o "$@" $(OBJECTS_Robot830_partialImage) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS)  && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
@@ -181,7 +181,7 @@ Robot830_partialImage/$(MODE_DIR)/Robot830_partialImage_clean :
 
 force : 
 
-DEP_FILES := Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/BlinkyRobot.d
+DEP_FILES := Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/ShooterRobot.d
 -include $(DEP_FILES)
 
 

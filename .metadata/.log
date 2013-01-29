@@ -6985,3 +6985,270 @@ java.lang.NullPointerException
 
 !ENTRY com.windriver.ide.target 2 0 2013-01-27 14:59:28.874
 !MESSAGE Communication with target 'VxWorks6x_10.08.30.2@Krakow' failed. Possible dead entry in WTX registry? Skipped!
+!SESSION 2013-01-27 15:28:27.390 -----------------------------------------------
+eclipse.buildId=M20110311-1130/WB20110622-1135
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.windriver.ide.common.core 4 0 2013-01-27 15:28:51.506
+!MESSAGE [Activities] Missing activity handler extension. Activity support is disabled, all packages are permanently enabled!
+
+!ENTRY com.windriver.ide 1 0 2013-01-27 15:29:17.226
+!MESSAGE Workbench start-up time: 43.27s, Main window shown after: 41.29s.
+
+!ENTRY com.windriver.ide.common.core 1 0 2013-01-27 15:29:22.197
+!MESSAGE Workbench license obtained in 0.69s, vendor information: <ln>78202</ln><flt>1</flt><ps>1851-1</ps>
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-27 15:29:35.149
+!MESSAGE C:\WindRiver\workbench-3.3\foundation\x86-win32\bin\wtxregd.exe
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-27 15:29:37.815
+!MESSAGE C:\WindRiver\workbench-3.3\dfw\\x86-win32\bin\dfwserver.exe  -protocol mi -io sockets -useregistry -session dfw-wb331-kscottz -registryhost 127.0.0.1
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-27 15:29:40.898
+!MESSAGE Connected to Wind River debug server backend at 127.0.0.1, 127.0.0.1:1155, PID=5008, Session="dfw-wb331-kscottz"
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-27 15:29:41.000
+!MESSAGE Wind River Debug Server API Version '2.12.0' (build name 'DFW_BUILD_3_3_1_21 - 06/23/2011 12:29:11')
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-27 15:32:27.454
+!MESSAGE vxsim -kill 0
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-27 15:32:27.460
+!MESSAGE Command execution failed: vxsim -kill 0
+!STACK 0
+java.io.IOException: Cannot run program "vxsim": CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:460)
+	at java.lang.Runtime.exec(Runtime.java:593)
+	at com.windriver.ide.common.core.installregistry.factories.WREnvProcessFactory.exec(WREnvProcessFactory.java:64)
+	at com.windriver.ide.common.core.installregistry.factories.WREnvProcessFactory.exec(WREnvProcessFactory.java:45)
+	at com.windriver.ide.common.core.installregistry.factories.WREnvProcessFactory.exec(WREnvProcessFactory.java:38)
+	at com.windriver.ide.common.core.installregistry.factories.WREnvProcessFactory.exec(WREnvProcessFactory.java:31)
+	at com.windriver.ide.target.core.stepper.connectstrategy.steps.vxsim.WRStopVxSimStep.execute(WRStopVxSimStep.java:60)
+	at com.windriver.ide.target.core.stepper.connectstrategy.steps.vxsim.WRStartVxSimStep.rollback(WRStartVxSimStep.java:160)
+	at com.windriver.ide.target.core.stepper.connectstrategy.steps.vxsim.WRStartVxSimStep.rollback(WRStartVxSimStep.java:1)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper$1.internalDone(AbstractTargetContextStepper.java:605)
+	at com.windriver.core.runtime.callback.WRCallback.done(WRCallback.java:139)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.rollback(AbstractTargetContextStepper.java:617)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.executeGroupable(AbstractTargetContextStepper.java:522)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.executeStepGroup(AbstractTargetContextStepper.java:434)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.internalExecute(AbstractTargetContextStepper.java:404)
+	at com.windriver.ide.target.core.stepper.AbstractTargetContextStepper.execute(AbstractTargetContextStepper.java:331)
+	at com.windriver.ide.target.connectiontypes.AbstractTargetConnectStrategyStepperJob.internalExecute(AbstractTargetConnectStrategyStepperJob.java:98)
+	at com.windriver.tm.core.async.AbstractAsyncExecutableJob.run(AbstractAsyncExecutableJob.java:189)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:81)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:30)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:453)
+	... 18 more
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-27 15:32:35.386
+!MESSAGE C:\WindRiver\workbench-3.3\foundation\x86-win32\bin\tgtsvr.exe -n VxWorks6x_10.08.30.2 -B wdbrpc -V -R C:/Users/kscottz/Desktop -RW -Bt 3 -c C:/WindRiver/WPILib/cRIOFRC_vxWorks 10.8.30.2
+
+!ENTRY com.windriver.ide.target.ui 1 0 2013-01-27 15:38:57.051
+!MESSAGE cmd /c start '"VxWorks6x_10.08.30.2@Krakow - WTX Console"'  C:\WindRiver\workbench-3.3\foundation\x86-win32\bin\wtxConsole.exe -io -s -n -w  VxWorks6x_10.08.30.2@Krakow
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-01-27 15:51:05.988
+!MESSAGE Indexed 'SimpleTemplate' (1 sources, 217 headers) in 10.06 sec: 21,362 declarations; 26,634 references; 0 unresolved inclusions; 0 syntax errors; 80 unresolved names (0.17%)
+
+!ENTRY com.windriver.ide.target 4 0 2013-01-27 15:52:33.080
+!MESSAGE Unhandled exception in DFW target event processing loop!
+!STACK 0
+java.lang.NullPointerException
+	at com.windriver.ide.target.internal.backend.dfw.DFWTargetEventProcessor.onContextStart(DFWTargetEventProcessor.java:1051)
+	at com.windriver.ide.target.internal.backend.dfw.DFWTargetEventProcessor.internalDispatchTargetEvent(DFWTargetEventProcessor.java:586)
+	at com.windriver.ide.target.internal.backend.dfw.DFWTargetEventProcessor.dispatchTargetEvent(DFWTargetEventProcessor.java:546)
+	at com.windriver.ide.target.internal.backend.dfw.DFWTargetEventProcessor.internalProcessTargetEvent(DFWTargetEventProcessor.java:452)
+	at com.windriver.ide.target.internal.backend.dfw.DFWTargetEventProcessor.processTargetEvent(DFWTargetEventProcessor.java:421)
+	at com.windriver.ide.target.internal.backend.dfw.DFWTargetEventProcessor.internalProcessEventQueue(DFWTargetEventProcessor.java:397)
+	at com.windriver.ide.target.internal.backend.dfw.DFWTargetEventProcessor.processEventQueue(DFWTargetEventProcessor.java:366)
+	at com.windriver.ide.target.internal.backend.dfw.DFWTargetEventProcessor$1.run(DFWTargetEventProcessor.java:134)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRunAndReset(FutureTask.java:317)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:150)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$101(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.runPeriodic(ScheduledThreadPoolExecutor.java:181)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:205)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+!SESSION 2013-01-27 17:47:41.286 -----------------------------------------------
+eclipse.buildId=M20110311-1130/WB20110622-1135
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -data C:\FirstMotorDriver -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.osgi 2 0 2013-01-27 17:47:54.081
+!MESSAGE While loading class "com.windriver.ide.debug.sourcelookup.DfeSourceLookupDirector", thread "Thread[DSF Executor - 0,6,DSF Executor - 0]" timed out waiting (5000ms) for thread "Thread[main,6,main]" to finish starting bundle "com.windriver.ide.debug_3.3.1.20110527-1139 [185]". To avoid deadlock, thread "Thread[DSF Executor - 0,6,DSF Executor - 0]" is proceeding but "com.windriver.ide.debug.sourcelookup.DfeSourceLookupDirector" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "reference:file:../../../wrworkbench/eclipse/plugins/com.windriver.ide.debug_3.3.1.20110527-1139.jar" by thread "main".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1077)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:282)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:417)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:265)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:106)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:453)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:393)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:469)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:248)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2427)
+	at java.lang.Class.getDeclaredMethods(Class.java:1791)
+	at com.windriver.rb.base.Sequent.fillCache(Sequent.java:1298)
+	at com.windriver.rb.base.Sequent.fillCache(Sequent.java:1280)
+	at com.windriver.rb.base.Sequent.findMethod(Sequent.java:1220)
+	at com.windriver.rb.base.Sequent.dispatch(Sequent.java:1113)
+	at com.windriver.rb.base.Sequent.run(Sequent.java:1205)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:207)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 29 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1077)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:282)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:417)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:265)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:106)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:453)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:393)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:469)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:248)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2427)
+	at java.lang.Class.getDeclaredMethods(Class.java:1791)
+	at com.windriver.rb.base.Sequent.fillCache(Sequent.java:1298)
+	at com.windriver.rb.base.Sequent.fillCache(Sequent.java:1280)
+	at com.windriver.rb.base.Sequent.findMethod(Sequent.java:1220)
+	at com.windriver.rb.base.Sequent.dispatch(Sequent.java:1113)
+	at com.windriver.rb.base.Sequent.run(Sequent.java:1205)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:207)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+
+!ENTRY com.windriver.ide.common.core 1 0 2013-01-27 17:47:55.869
+!MESSAGE Workbench license obtained in 0.05s, vendor information: <ln>78202</ln><flt>1</flt><ps>1851-1</ps>
+
+!ENTRY com.windriver.ide 1 0 2013-01-27 17:47:56.057
+!MESSAGE Workbench start-up time: 14.82s, Main window shown after: 13.78s.
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-27 17:47:56.091
+!MESSAGE C:\WindRiver\workbench-3.3\dfw\\x86-win32\bin\dfwserver.exe  -protocol mi -io sockets -useregistry -session dfw-wb331-kscottz -registryhost 127.0.0.1
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-27 17:47:56.275
+!MESSAGE Connected to Wind River debug server backend at 127.0.0.1, 127.0.0.1:6214, PID=5620, Session="dfw-wb331-kscottz"
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-27 17:47:56.303
+!MESSAGE Wind River Debug Server API Version '2.12.0' (build name 'DFW_BUILD_3_3_1_21 - 06/23/2011 12:29:11')
+!SESSION 2013-01-28 20:38:07.012 -----------------------------------------------
+eclipse.buildId=M20110311-1130/WB20110622-1135
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -data C:\FirstMotorDriver -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.osgi 2 0 2013-01-28 20:38:19.571
+!MESSAGE While loading class "com.windriver.ide.debug.sourcelookup.DfeSourceLookupDirector", thread "Thread[DSF Executor - 0,6,DSF Executor - 0]" timed out waiting (5000ms) for thread "Thread[main,6,main]" to finish starting bundle "com.windriver.ide.debug_3.3.1.20110527-1139 [185]". To avoid deadlock, thread "Thread[DSF Executor - 0,6,DSF Executor - 0]" is proceeding but "com.windriver.ide.debug.sourcelookup.DfeSourceLookupDirector" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "reference:file:../../../wrworkbench/eclipse/plugins/com.windriver.ide.debug_3.3.1.20110527-1139.jar" by thread "main".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1077)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:282)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:417)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:265)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:106)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:453)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:393)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:469)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:248)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2427)
+	at java.lang.Class.getDeclaredMethods(Class.java:1791)
+	at com.windriver.rb.base.Sequent.fillCache(Sequent.java:1298)
+	at com.windriver.rb.base.Sequent.fillCache(Sequent.java:1280)
+	at com.windriver.rb.base.Sequent.findMethod(Sequent.java:1220)
+	at com.windriver.rb.base.Sequent.dispatch(Sequent.java:1113)
+	at com.windriver.rb.base.Sequent.run(Sequent.java:1205)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:207)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 29 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1077)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:282)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:417)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:265)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:106)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:453)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:393)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:469)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:248)
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2427)
+	at java.lang.Class.getDeclaredMethods(Class.java:1791)
+	at com.windriver.rb.base.Sequent.fillCache(Sequent.java:1298)
+	at com.windriver.rb.base.Sequent.fillCache(Sequent.java:1280)
+	at com.windriver.rb.base.Sequent.findMethod(Sequent.java:1220)
+	at com.windriver.rb.base.Sequent.dispatch(Sequent.java:1113)
+	at com.windriver.rb.base.Sequent.run(Sequent.java:1205)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:207)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:619)
+
+!ENTRY com.windriver.ide.common.core 1 0 2013-01-28 20:38:21.286
+!MESSAGE Workbench license obtained in 0.05s, vendor information: <ln>78202</ln><flt>1</flt><ps>1851-1</ps>
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-28 20:38:21.417
+!MESSAGE C:\WindRiver\workbench-3.3\dfw\\x86-win32\bin\dfwserver.exe  -protocol mi -io sockets -useregistry -session dfw-wb331-kscottz -registryhost 127.0.0.1
+
+!ENTRY com.windriver.ide 1 0 2013-01-28 20:38:21.465
+!MESSAGE Workbench start-up time: 14.51s, Main window shown after: 13.51s.
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-28 20:38:21.592
+!MESSAGE Connected to Wind River debug server backend at 127.0.0.1, 127.0.0.1:11087, PID=2944, Session="dfw-wb331-kscottz"
+
+!ENTRY com.windriver.ide.target 1 0 2013-01-28 20:38:21.641
+!MESSAGE Wind River Debug Server API Version '2.12.0' (build name 'DFW_BUILD_3_3_1_21 - 06/23/2011 12:29:11')
