@@ -32,8 +32,8 @@ else
 MODE_DIR := NonDebug
 endif
 OBJ_DIR := .
-WS_ROOT_DIR := C:/FirstMotorDriver
-PRJ_ROOT_DIR := $(WS_ROOT_DIR)/Robot830
+WS_ROOT_DIR := C:/Users/upuli/Documents/GitHub
+PRJ_ROOT_DIR := $(WS_ROOT_DIR)/FirstMotorDriver/Robot830
 
 
 
