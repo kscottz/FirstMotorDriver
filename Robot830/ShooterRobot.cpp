@@ -66,7 +66,7 @@ public:
 			driverStation->PrintfLine(DriverStationLCD::kUser_Line1, "TRIGGER ENGAGED");
 			flywheel.Set(throttle);
 		} else {
-			driverStation->PrintfLine(DriverStationLCD::kUser_Line1, "PULL TRIGGER TO ENGAGE");
+			driverStation->PrintfLine(DriverStationLCD::kUser_Line1, "TRIGGER DISENGAGED");
 			flywheel.Set(0);
 		}
 		//print the throttle value as a percentage
