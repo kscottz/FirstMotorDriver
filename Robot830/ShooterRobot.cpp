@@ -58,6 +58,9 @@ public:
 		throttle = (-throttle + 1)/2; 
 		//then clamp them to multiples of .05 for repeatability
 		throttle = 0.05f * ((int) (throttle * 20.0f));
+		//max out at 75%, for safety and stuff
+		if (throttle >= 0.75f)
+			throttle = 0.75f;
 		//fire only if the trigger is being held down
 		if (joystick.GetTrigger()){
 			driverStation->PrintfLine(DriverStationLCD::kUser_Line1, "TRIGGER ENGAGED");

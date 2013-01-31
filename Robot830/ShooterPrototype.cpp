@@ -3,14 +3,14 @@
 using namespace::std;
 // I changed this
 
-class BlinkyRobot : public IterativeRobot {
+class ShooterPrototype : public IterativeRobot {
 	Joystick joystick;
 	Victor flywheel;
 	
 	static const int JOYSTICK_PORT = 1;
 	static const int FLYWHEEL_PWM = 1;
 public:
-	BlinkyRobot() : joystick(JOYSTICK_PORT), flywheel(FLYWHEEL_PWM){
+	ShooterPrototype() : joystick(JOYSTICK_PORT), flywheel(FLYWHEEL_PWM){
 		
 	}
 	
