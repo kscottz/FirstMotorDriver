@@ -38,9 +38,9 @@ PRJ_ROOT_DIR := $(WS_ROOT_DIR)//FirstMotorDriver/Robot830
 
 
 #Global Build Macros
-PROJECT_TYPE = DKM
 DEFINES = 
 EXPAND_DBG = 0
+PROJECT_TYPE = DKM
 
 
 #BuildSpec specific Build Macros
@@ -53,9 +53,9 @@ CC_ARCH_SPEC = -mcpu=603 -mstrict-align -mno-implicit-fp
 LIBPATH = 
 LIBS = 
 
-IDE_INCLUDES = -IC:/WindRiver/vxworks-6.3/target/h/WPILib -IC:/WindRiver/vxworks-6.3/target/h/wrn/coreip 
+IDE_INCLUDES = -I$(WIND_BASE)/target/h/wrn/coreip -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/WPILib 
 
-IDE_LIBRARIES = -L $(WIND_BASE)/target/lib/WPILib.a 
+IDE_LIBRARIES = $(WIND_BASE)/target/lib/WPILib.a 
 
 IDE_DEFINES = 
 
@@ -102,12 +102,12 @@ Robot830/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker =
 Robot830/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
 Robot830/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -O2 -fstrength-reduce -fno-builtin
 endif
-Robot830/$(MODE_DIR)/% : IDE_INCLUDES = -IC:/WindRiver/vxworks-6.3/target/h/WPILib -IC:/WindRiver/vxworks-6.3/target/h/wrn/coreip 
-Robot830/$(MODE_DIR)/% : IDE_LIBRARIES = -L $(WIND_BASE)/target/lib/WPILib.a 
+Robot830/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h/wrn/coreip -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/WPILib 
+Robot830/$(MODE_DIR)/% : IDE_LIBRARIES = $(WIND_BASE)/target/lib/WPILib.a 
 Robot830/$(MODE_DIR)/% : IDE_DEFINES = 
-Robot830/$(MODE_DIR)/% : PROJECT_TYPE = DKM
 Robot830/$(MODE_DIR)/% : DEFINES = 
 Robot830/$(MODE_DIR)/% : EXPAND_DBG = 0
+Robot830/$(MODE_DIR)/% : PROJECT_TYPE = DKM
 Robot830/$(MODE_DIR)/% : VX_CPU_FAMILY = ppc
 Robot830/$(MODE_DIR)/% : CPU = PPC603
 Robot830/$(MODE_DIR)/% : TOOL_FAMILY = gnu
@@ -147,12 +147,12 @@ Robot830_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker =
 Robot830_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
 Robot830_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -O2 -fstrength-reduce -fno-builtin
 endif
-Robot830_partialImage/$(MODE_DIR)/% : IDE_INCLUDES = -IC:/WindRiver/vxworks-6.3/target/h/WPILib -IC:/WindRiver/vxworks-6.3/target/h/wrn/coreip 
-Robot830_partialImage/$(MODE_DIR)/% : IDE_LIBRARIES = -L $(WIND_BASE)/target/lib/WPILib.a 
+Robot830_partialImage/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h/wrn/coreip -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/WPILib 
+Robot830_partialImage/$(MODE_DIR)/% : IDE_LIBRARIES = $(WIND_BASE)/target/lib/WPILib.a 
 Robot830_partialImage/$(MODE_DIR)/% : IDE_DEFINES = 
-Robot830_partialImage/$(MODE_DIR)/% : PROJECT_TYPE = DKM
 Robot830_partialImage/$(MODE_DIR)/% : DEFINES = 
 Robot830_partialImage/$(MODE_DIR)/% : EXPAND_DBG = 0
+Robot830_partialImage/$(MODE_DIR)/% : PROJECT_TYPE = DKM
 Robot830_partialImage/$(MODE_DIR)/% : VX_CPU_FAMILY = ppc
 Robot830_partialImage/$(MODE_DIR)/% : CPU = PPC603
 Robot830_partialImage/$(MODE_DIR)/% : TOOL_FAMILY = gnu
@@ -167,12 +167,7 @@ Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/ShooterPrototype.o : $(PRJ_RO
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/ShooterRobot.o : $(PRJ_ROOT_DIR)/ShooterRobot.cpp $(FORCE_FILE_BUILD)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
-
-
-OBJECTS_Robot830_partialImage = Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/ShooterPrototype.o \
-	 Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/ShooterRobot.o
+OBJECTS_Robot830_partialImage = Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/ShooterPrototype.o
 
 Robot830_partialImage/$(MODE_DIR)/Robot830_partialImage.o : $(OBJECTS_Robot830_partialImage)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X  -o "$@" $(OBJECTS_Robot830_partialImage) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS)  && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
@@ -186,7 +181,7 @@ Robot830_partialImage/$(MODE_DIR)/Robot830_partialImage_clean :
 
 force : 
 
-DEP_FILES := Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/ShooterPrototype.d Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/ShooterRobot.d
+DEP_FILES := Robot830_partialImage/$(MODE_DIR)/Objects/Robot830/ShooterPrototype.d
 -include $(DEP_FILES)
 
 

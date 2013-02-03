@@ -4,9 +4,9 @@
     <attributes>
         <mapAttribute>
             <listAttribute key="BLD::Info|GlobalMacros">
-                <stringAttribute value="PROJECT_TYPE"/>
                 <stringAttribute value="DEFINES"/>
                 <stringAttribute value="EXPAND_DBG"/>
+                <stringAttribute value="PROJECT_TYPE"/>
             </listAttribute>
             <stringAttribute key="BLD::Info|GlobalMacro|DEFINES" value=""/>
             <stringAttribute key="BLD::Info|GlobalMacro|EXPAND_DBG" value="0"/>
@@ -21,11 +21,12 @@
                 <stringAttribute value="-IC:/WindRiver/vxworks-6.3/target/h/WPILib"/>
             </listAttribute>
             <listAttribute key="BLD::Info|Incl|PPC603gnu">
-                <stringAttribute value="-IC:/WindRiver/vxworks-6.3/target/h/WPILib"/>
-                <stringAttribute value="-IC:/WindRiver/vxworks-6.3/target/h/wrn/coreip"/>
+                <stringAttribute value="-I$(WIND_BASE)/target/h/wrn/coreip"/>
+                <stringAttribute value="-I$(WIND_BASE)/target/h"/>
+                <stringAttribute value="-I$(WIND_BASE)/target/h/WPILib"/>
             </listAttribute>
             <listAttribute key="BLD::Info|Libs|PPC603gnu">
-                <stringAttribute value="-L $(WIND_BASE)/target/lib/WPILib.a"/>
+                <stringAttribute value="$(WIND_BASE)/target/lib/WPILib.a"/>
             </listAttribute>
             <listAttribute key="BLD::Info|Macros">
                 <stringAttribute value="VX_CPU_FAMILY"/>
@@ -229,6 +230,9 @@
                 <stringAttribute value="PPC603gnu"/>
             </listAttribute>
             <intAttribute key="BuildSupportEnabled" value="1"/>
+            <listAttribute key="BuildSupportForBuildSpecs">
+                <stringAttribute value="PPC603gnu"/>
+            </listAttribute>
             <booleanAttribute key="BuildTargetCentric" value="true"/>
         </mapAttribute>
     </attributes>
