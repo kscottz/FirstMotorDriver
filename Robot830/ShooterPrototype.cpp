@@ -41,8 +41,10 @@ public:
 		//map [1, -1] throttle values to [0, 1] victor speeds
 		throttle = (-throttle + 1)/2; 
 		//clamp to multiples of 0.05
-		throttle = 0.05 * (int)(throttle * 20);
-		ds->PrintfLine(DriverStationLCD::kUser_Line2, "Throttle at: %d%%", (int) throttle * 100);
+		throttle = 0.05f * (int)(throttle * 20);
+		if (throttle >= 0.75f)
+			throttle = 0.75f;
+		ds->PrintfLine(DriverStationLCD::kUser_Line2, "Throttle at: %d%%", (int) (throttle * 100));
 		if (joystick.GetTrigger()){
 			flywheel.Set(throttle);
 			ds->PrintfLine(DriverStationLCD::kUser_Line1, "TRIGGER ENGAGED");
@@ -50,7 +52,10 @@ public:
 			flywheel.Set(0);
 			ds->PrintfLine(DriverStationLCD::kUser_Line1, "TRIGGER DISENGAGED");
 		}
+		ds->UpdateLCD();
 	}
 	
 	
 };
+
+START_ROBOT_CLASS(ShooterPrototype)
