@@ -42,14 +42,18 @@ public:
 		throttle = (-throttle + 1)/2; 
 		//clamp to multiples of 0.05
 		throttle = 0.05f * (int)(throttle * 20);
-		if (throttle >= 0.75f)
+		if (throttle >= 0.75f){
 			throttle = 0.75f;
+			ds->PrintfLine(DriverStationLCD::kUser_Line3, "THROTTLE LIMIT REACHED");
+		} else {
+			ds->PrintfLine(DriverStationLCD::kUser_Line3, "");
+		}
 		ds->PrintfLine(DriverStationLCD::kUser_Line2, "Throttle at: %d%%", (int) (throttle * 100));
 		if (joystick.GetTrigger()){
 			flywheel.Set(throttle);
 			ds->PrintfLine(DriverStationLCD::kUser_Line1, "TRIGGER ENGAGED");
 		} else {
-			flywheel.Set(0);
+			flywheel.Set(0.0f);
 			ds->PrintfLine(DriverStationLCD::kUser_Line1, "TRIGGER DISENGAGED");
 		}
 		ds->UpdateLCD();
