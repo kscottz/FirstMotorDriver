@@ -7,6 +7,7 @@ class ShooterPrototype : public IterativeRobot {
 	
 	static const int JOYSTICK_PORT = 1;
 	static const int FLYWHEEL_PWM = 1;
+	static const float MAX_THROTTLE = .8f;
 public:
 	ShooterPrototype() : joystick(JOYSTICK_PORT), flywheel(FLYWHEEL_PWM) {
 		ds = DriverStationLCD::GetInstance();
@@ -42,11 +43,11 @@ public:
 		throttle = (-throttle + 1)/2; 
 		//clamp to multiples of 0.05
 		throttle = 0.05f * (int)(throttle * 20);
-		if (throttle >= 0.75f){
-			throttle = 0.75f;
-			ds->PrintfLine(DriverStationLCD::kUser_Line3, "THROTTLE LIMIT REACHED");
+		if (throttle >= MAX_THROTTLE){
+			throttle = MAX_THROTTLE;
+			ds->PrintfLine(DriverStationLCD::kUser_Line4, "THROTTLE LIMIT REACHED");
 		} else {
-			ds->PrintfLine(DriverStationLCD::kUser_Line3, "");
+			ds->PrintfLine(DriverStationLCD::kUser_Line4, "");
 		}
 		ds->PrintfLine(DriverStationLCD::kUser_Line2, "Throttle at: %d%%", (int) (throttle * 100));
 		if (joystick.GetTrigger()){
@@ -56,6 +57,7 @@ public:
 			flywheel.Set(0.0f);
 			ds->PrintfLine(DriverStationLCD::kUser_Line1, "TRIGGER DISENGAGED");
 		}
+		ds->PrintfLine(DriverStationLCD::kUser_Line3, "Victor is at: %d", (int)(flywheel.Get() * 100));
 		ds->UpdateLCD();
 	}
 	
